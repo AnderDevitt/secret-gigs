@@ -17,7 +17,7 @@
         <% else %>
             <% if current_user.organizer? %>
                 <li class="nav-item", class: "nav-link active">
-                    <%= link_to 'New Gig', new_gig_path %>
+                    <%= link_to 'New Gig', new_gig_path, class: "nav-link active"  %>
                 </li>
             <% end %>
                 <li class="nav-item">
