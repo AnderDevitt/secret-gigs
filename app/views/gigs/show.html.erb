@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gig.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @gig.date %>
+</p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @gig.area %>
+</p>
+
+<p>
+  <strong>Tickets:</strong>
+  <%= @gig.tickets %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @gig.price %>
+</p>
+
+<p>
+  <strong>Organizer:</strong>
+  <%= @gig.user.username %>
+</p>
+
+<% if user_signed_in? and (current_user.admin or current_user == @gig.user)%>
+  <%= link_to 'Edit', edit_gig_path(@gig) %>
+  <%= link_to 'Destroy', @gig, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<%= link_to 'Back', gigs_path %>
